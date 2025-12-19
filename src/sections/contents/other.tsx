@@ -7,7 +7,7 @@ export default function Other() {
     >
       <div className="w-3/5 aspect-square rounded-full overflow-hidden self-center">
         <img
-          src="src/assets/pic.jpg"
+          src="pic.jpg"
           alt="picture"
           className="w-full h-full object-cover"
         />
