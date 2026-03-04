@@ -3,16 +3,23 @@ import { Icon } from "@iconify/react";
 type Project = {
   name: string;
   description: string;
-  techStack: string[]; // iconify icon names
+  techStack: string[];
+  images: string[];
 };
 
 export default function Proj() {
   const projects: Project[] = [
     {
-      name: "Kimventory",
+      name: "Flutter/React Blogs",
       description:
-        "A simple POS system that records transactions for a small eLoading business by my girlfriend",
-      techStack: ["devicon:react", "devicon:nextjs", "devicon:postgresql"],
+        "A mobile application I created while learning flutter, also a website that is built using Nextjs",
+      techStack: [
+        "devicon:flutter",
+        "devicon:nextjs",
+        "devicon:supabase",
+        "devicon:postgresql",
+      ],
+      images: ["flutter1.png", "flutter2.png", "flutter3.png"],
     },
   ];
 
@@ -46,6 +53,16 @@ export default function Proj() {
                   key={i}
                   icon={icon}
                   className="text-3xl hover:cursor-pointer hover:scale-150 transition-transform"
+                />
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+              {project.images.map((url, i) => (
+                <img
+                  src={url}
+                  key={i}
+                  alt={url}
+                  className="w-full h-auto rounded-lg object-cover"
                 />
               ))}
             </div>
