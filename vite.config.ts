@@ -11,5 +11,5 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
-  base: "/jaydlssnts.github.io/",
+  base: "/",
 });
