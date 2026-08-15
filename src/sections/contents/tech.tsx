@@ -35,7 +35,7 @@ export default function Tech() {
             <Icon className="tech-icon" icon="devicon:mysql" />
             <Icon className="tech-icon" icon="devicon:postgresql" />
             <Icon className="tech-icon" icon="devicon:firebase" />
-            <Icon className="tech-icon" icon="devicon:androidstudio" />
+            <Icon className="tech-icon" icon="devicon:mongodb" />
           </div>
         </div>
 

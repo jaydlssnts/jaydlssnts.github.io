@@ -9,20 +9,28 @@ type WorkItem = {
 export default function Work() {
   const items: WorkItem[] = [
     {
+      company: "Digital One Solutions Inc",
+      location: "Makati",
+      position: "Full Stack Developer",
+      description:
+        "Assigned to create a HRIS System with the features like Monitor Employees Attendance, Leave Applications, Performance Evaluations, etc.",
+      date: "May 2026 - Present",
+    },
+    {
+      company: "MB Philippines Inc.",
+      location: "Pasig",
+      position: "Jr. Developer",
+      description:
+        "Helped the Clients-Requirements Department by writing, testing, maintaining code, fixing bugs, learning the codebase and etc.",
+      date: "April 2022 - June 2025",
+    },
+    {
       company: "Cajache Group of Companies",
       location: "Remote",
       position: "Android Developer",
       description:
         "Developed an application called DoodaPH that allows users to book resorts, hotel rooms, and attractions.",
       date: "2022",
-    },
-    {
-      company: "MB Philippines Inc.",
-      location: "Pasig City",
-      position: "Jr. Developer",
-      description:
-        "Helped the Clients-Requirements Department by writing, testing, maintaining code, fixing bugs, learning the codebase and etc.",
-      date: "2022-2025",
     },
   ];
 
