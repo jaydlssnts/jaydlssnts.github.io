@@ -24,35 +24,33 @@ export default function Proj() {
   ];
 
   return (
-    <div id="proj" className="w-[70%] mx-auto py-16 flex flex-col gap-10">
-      <p className="text-5xl font-bold text-center">Personal Projects</p>
-
+    <div className="w-full flex flex-col gap-10">
       {/* Projects List */}
       <div className="flex flex-col gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border border-green rounded-2xl p-8 shadow-sm hover:shadow-md transition"
+            className="border-2 border-fg rounded-2xl p-8 bg-gray-600 transition"
           >
             {/* Project Title */}
-            <p className="text-2xl text-white font-semibold mb-4">
+            <p className="text-2xl text-fg font-semibold mb-4">
               {project.name}
             </p>
 
             {/* Description */}
-            <p className="text-lg text-white leading-relaxed mb-6">
+            <p className="text-lg text-fg-dim leading-relaxed mb-6">
               {project.description}
             </p>
 
             {/* Tech Stack */}
             <div className="flex items-center gap-4 flex-wrap">
-              <span className="font-medium text-white">Tech Stack:</span>
+              <span className="font-medium text-fg">Tech Stack:</span>
 
               {project.techStack.map((icon, i) => (
                 <Icon
                   key={i}
                   icon={icon}
-                  className="text-3xl hover:cursor-pointer hover:scale-150 transition-transform"
+                  className="text-3xl text-fg hover:cursor-pointer hover:scale-150 transition-transform"
                 />
               ))}
             </div>

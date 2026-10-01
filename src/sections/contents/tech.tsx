@@ -2,51 +2,74 @@ import { Icon } from "@iconify/react";
 
 export default function Tech() {
   return (
-    <div id="tech" className="max-w-4xl mx-auto px-4 py-12">
-      <p className="text-5xl font-bold mb-10">Technologies & Skills</p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border-2 border-purple rounded-xl p-6 bg-orange shadow-sm hover:shadow-md transition">
-          <p className="text-xl font-semibold mb-4">Frontend</p>
-          <div className="flex flex-wrap gap-4 text-3xl text-gray-700">
-            <Icon className="tech-icon" icon="devicon:html5" />
-            <Icon className="tech-icon" icon="devicon:css3" />
-            <Icon className="tech-icon" icon="devicon:javascript" />
-            <Icon className="tech-icon" icon="devicon:typescript" />
-            <Icon className="tech-icon" icon="devicon:react" />
-            <Icon className="tech-icon" icon="devicon:tailwindcss" />
-            <Icon className="tech-icon" icon="devicon:bootstrap" />
-          </div>
+    <div className="w-full font-mono">
+      {/* Neofetch-style header */}
+      <div className="flex flex-col md:flex-row gap-8 mb-8">
+        {/* ASCII art - J for Jay */}
+        <div className="text-fg text-xs leading-tight whitespace-pre shrink-0">
+          {/* prettier-ignore-start */}
+          {`  ██████╗
+     ██║
+     ██║
+     ██║
+  ██ ║
+  ╚═══╝`}
+          {/* prettier-ignore-end */}
         </div>
 
-        <div className="border-2 border-purple rounded-xl p-6 bg-orange shadow-sm hover:shadow-md transition">
-          <p className="text-xl font-semibold mb-4">Backend</p>
-          <div className="flex flex-wrap gap-4 text-3xl text-gray-700">
-            <Icon className="tech-icon" icon="devicon:java" />
-            <Icon className="tech-icon" icon="devicon:groovy" />
-            <Icon className="tech-icon" icon="devicon:php" />
-            <Icon className="tech-icon" icon="devicon:nextjs" />
-          </div>
-        </div>
-
-        <div className="border-2 border-purple rounded-xl p-6 bg-orange shadow-sm hover:shadow-md transition">
-          <p className="text-xl font-semibold mb-4">Database</p>
-          <div className="flex flex-wrap gap-4 text-3xl text-gray-700">
-            <Icon className="tech-icon" icon="devicon:mysql" />
-            <Icon className="tech-icon" icon="devicon:postgresql" />
-            <Icon className="tech-icon" icon="devicon:firebase" />
-            <Icon className="tech-icon" icon="devicon:mongodb" />
-          </div>
-        </div>
-
-        <div className="border-2 border-purple rounded-xl p-6 bg-orange shadow-sm hover:shadow-md transition">
-          <p className="text-xl font-semibold mb-4">Others</p>
-          <div className="flex flex-wrap gap-4 text-3xl text-gray-700">
-            <Icon className="tech-icon" icon="devicon:github" />
-            <Icon className="tech-icon" icon="devicon:docker" />
-            <Icon className="tech-icon" icon="devicon:linux" />
-            <Icon className="tech-icon" icon="devicon:photoshop" />
-            <Icon className="tech-icon" icon="devicon:illustrator" />
+        {/* Tech categories as neofetch lines */}
+        <div className="flex flex-col gap-4 text-sm">
+          <p>
+            <span className="text-fg font-bold">Frontend</span>
+            <span className="text-fg-dim"> — </span>
+            <span className="flex flex-wrap gap-3 text-3xl text-fg">
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:html5" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:css3" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:javascript" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:typescript" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:react" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:tailwindcss" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:bootstrap" />
+            </span>
+          </p>
+          <p>
+            <span className="text-fg font-bold">Backend</span>
+            <span className="text-fg-dim"> — </span>
+            <span className="flex flex-wrap gap-3 text-3xl text-fg">
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:java" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:groovy" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:php" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:nextjs" />
+            </span>
+          </p>
+          <p>
+            <span className="text-fg font-bold">Database</span>
+            <span className="text-fg-dim"> — </span>
+            <span className="flex flex-wrap gap-3 text-3xl text-fg">
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:mysql" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:postgresql" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:firebase" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:mongodb" />
+            </span>
+          </p>
+          <p>
+            <span className="text-fg font-bold">Others</span>
+            <span className="text-fg-dim"> — </span>
+            <span className="flex flex-wrap gap-3 text-3xl text-fg">
+              <Icon className="hover:scale-125 transition-transform text-fg" icon="devicon:github" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:docker" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:linux" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:photoshop" />
+              <Icon className="hover:scale-125 transition-transform" icon="devicon:illustrator" />
+            </span>
+          </p>
+          <div className="flex gap-1 mt-2">
+            <span className="w-4 h-4 bg-bg" />
+            <span className="w-4 h-4 bg-bg-light" />
+            <span className="w-4 h-4 bg-fg" />
+            <span className="w-4 h-4 bg-fg-dim" />
+            <span className="w-4 h-4 bg-accent" />
+            <span className="w-4 h-4 bg-cursor" />
           </div>
         </div>
       </div>

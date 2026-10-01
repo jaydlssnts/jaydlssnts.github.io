@@ -1,15 +1,49 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/font/JetBrainsMonoNerdFont-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/font/JetBrainsMonoNerdFont-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/font/JetBrainsMonoNerdFont-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/font/JetBrainsMonoNerdFont-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
 @theme {
-  --color-orange: #e6770b;
-  --color-red: #d3290f;
-  --color-green: #52d053;
-  --color-purple: #765898;
+  --color-bg: #121212;
+  --color-bg-light: #3d1e5e;
+  --color-fg: #6ee87a;
+  --color-fg-dim: #7a5a94;
+  --color-accent: #d4a833;
+  --color-cursor: #8b4dbf;
+
+  --font-sans: "JetBrainsMono", monospace;
+  --font-mono: "JetBrainsMono", monospace;
 }
 
 html {
-  background-color: black;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: "JetBrainsMono", monospace;
 }
 
 @keyframes float {

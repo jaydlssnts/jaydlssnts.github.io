@@ -1,16 +1,15 @@
-import './App.css'
-import Footer from './sections/footer'
-import Header from './sections/header'
-import Body from './sections/body'
+import "./App.css";
+import Footer from "./sections/footer";
+import Header from "./sections/header";
+import Body from "./sections/body";
 function App() {
-
   return (
-    <>
-      <Header/>
-      <Body/>
-      <Footer/>
-    </>
-  )
+    <section className="h-screen bg-bg text-fg">
+      <Header />
+      <Body />
+      <Footer />
+    </section>
+  );
 }
 
-export default App
+export default App;
