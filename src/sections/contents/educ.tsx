@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 export default function Educ() {
   return (
     <div className="w-full">
-      <div className="gap-15 space-y-6 flex flex-row border-2 border-fg bg-gray-600 rounded-lg p-6">
+      <div className="gap-15 space-y-6 flex flex-row border-2 border-fg bg-surface rounded-lg p-6">
         <Icon
           icon={"tabler:school"}
           width={150}

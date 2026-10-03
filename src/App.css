@@ -29,12 +29,26 @@
 }
 
 @theme {
-  --color-bg: #121212;
-  --color-bg-light: #3d1e5e;
-  --color-fg: #6ee87a;
-  --color-fg-dim: #7a5a94;
-  --color-accent: #d4a833;
-  --color-cursor: #8b4dbf;
+  /* Dracula Theme — all 12 colors with direct hex values */
+  --color-bg: #282a36;
+  --color-current-line: #44475a;
+  --color-selection: #44475a;
+  --color-fg: #f8f8f2;
+  --color-comment: #6272a4;
+  --color-red: #ff5555;
+  --color-orange: #ffb86c;
+  --color-yellow: #f1fa8c;
+  --color-green: #50fa7b;
+  --color-cyan: #8be9fd;
+  --color-purple: #bd93f9;
+  --color-pink: #ff79c6;
+
+  /* Utility aliases */
+  --color-fg-dim: #6272a4;
+  --color-accent: #ffb86c;
+  --color-cursor: #bd93f9;
+  --color-surface: #44475a;
+  --color-bg-light: #6272a4;
 
   --font-sans: "JetBrainsMono", monospace;
   --font-mono: "JetBrainsMono", monospace;
@@ -58,6 +72,19 @@ html {
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .tech-icon:hover {

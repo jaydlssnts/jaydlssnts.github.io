@@ -45,7 +45,7 @@ export default function Work() {
       {items.map((item, index) => (
           <div
             key={index}
-            className="border-2 border-fg rounded-lg p-6 bg-gray-600 transition"
+            className="border-2 border-fg rounded-lg p-6 bg-surface transition"
           >
             <div className="flex items-center justify-between">
               <p className="text-xl font-semibold text-fg">{item.position}</p>

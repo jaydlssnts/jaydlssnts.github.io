@@ -30,7 +30,7 @@ export default function Proj() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border-2 border-fg rounded-2xl p-8 bg-gray-600 transition"
+            className="border-2 border-fg rounded-2xl p-8 bg-surface transition"
           >
             {/* Project Title */}
             <p className="text-2xl text-fg font-semibold mb-4">

@@ -63,14 +63,6 @@ export default function Tech() {
               <Icon className="hover:scale-125 transition-transform" icon="devicon:illustrator" />
             </span>
           </p>
-          <div className="flex gap-1 mt-2">
-            <span className="w-4 h-4 bg-bg" />
-            <span className="w-4 h-4 bg-bg-light" />
-            <span className="w-4 h-4 bg-fg" />
-            <span className="w-4 h-4 bg-fg-dim" />
-            <span className="w-4 h-4 bg-accent" />
-            <span className="w-4 h-4 bg-cursor" />
-          </div>
         </div>
       </div>
     </div>
