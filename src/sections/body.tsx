@@ -20,19 +20,23 @@ function TypingOutput({
   children,
   commandKey,
   introText,
+  onDone,
 }: {
   children: ReactNode;
   commandKey: string;
   introText: string;
+  onDone?: () => void;
 }) {
   const introRef = useRef<HTMLSpanElement>(null);
   const typedRef = useRef<Typed | null>(null);
+  const initialized = useRef(false);
   const [showContent, setShowContent] = useState(false);
 
   const key = `${commandKey}-${introText}`;
 
   useEffect(() => {
-    if (!introRef.current) return;
+    if (!introRef.current || initialized.current) return;
+    initialized.current = true;
     typedRef.current = new Typed(introRef.current, {
       strings: [introText],
       typeSpeed: 30,
@@ -44,13 +48,13 @@ function TypingOutput({
         const cursor = introRef.current
           ?.nextElementSibling as HTMLElement | null;
         if (cursor) cursor.style.display = "none";
-        setTimeout(() => setShowContent(true), 200);
+        setTimeout(() => {
+          setShowContent(true);
+          onDone?.();
+        }, 200);
       },
     });
-    return () => {
-      typedRef.current?.destroy();
-    };
-  }, [key]);
+  }, [key, onDone]);
 
   return (
     <div key={key}>
@@ -94,7 +98,7 @@ export default function Body() {
     if (activeTab === "projects") return <Proj />;
     if (activeTab === "skills") return <Tech />;
     if (activeTab === "about") return <Other />;
-    return null;
+    return <HomeContent />;
   };
 
   return (
@@ -102,16 +106,15 @@ export default function Body() {
       <TerminalWindow id="cli" title="portfolio">
         <div className="flex flex-col h-full">
           {/* Scrollable content area */}
-          <div className="flex-1 overflow-auto space-y-6 pb-4">
-            {activeTab && (
-              <TypingOutput
-                key={activeTab}
-                commandKey={activeTab}
-                introText={`cat ~/.${activeTab}`}
-              >
-                <div className="mt-4">{renderContent()}</div>
-              </TypingOutput>
-            )}
+          <div className="flex-1 overflow-auto space-y-6 pb-4 pr-2">
+            <TypingOutput
+              key={activeTab ?? "home"}
+              commandKey={activeTab ?? "home"}
+              introText={`cat ~/.${activeTab ?? "home"}`}
+              onDone={() => setIntroDone(true)}
+            >
+              <div className="mt-4">{renderContent()}</div>
+            </TypingOutput>
           </div>
 
           {/* Command bar — pinned at bottom */}

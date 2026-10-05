@@ -43,39 +43,37 @@ export default function Work() {
   return (
     <div className="w-full space-y-6">
       {items.map((item, index) => (
-          <div
-            key={index}
-            className="border-2 border-fg rounded-lg p-6 bg-surface transition"
-          >
-            <div className="flex items-center justify-between">
-              <p className="text-xl font-semibold text-fg">{item.position}</p>
+        <div
+          key={index}
+          className="border-2 border-fg rounded-lg p-6 bg-surface transition"
+        >
+          <div className="flex items-center justify-between">
+            <p className="text-xl font-semibold text-fg">{item.position}</p>
 
-              <span className="text-md text-bg bg-accent px-2 rounded-2xl">
-                {item.date}
-              </span>
-            </div>
-
-            <p className="text-md font-medium text-fg mt-1">{item.company}</p>
-
-            <div className="flex flex-row items-center">
-              <Icon icon="tabler:map-pin" className="text-2xl" />
-              <p className="text-lg text-fg-dim">{item.location}</p>
-            </div>
-            <p className="mt-4 text-fg-dim leading-relaxed">
-              {item.description}
-            </p>
-            <div>
-              {item.images.map((url, i) => (
-                <img
-                  src={url}
-                  key={i}
-                  alt={url}
-                  className="w-full h-auto rounded-lg object-cover"
-                />
-              ))}
-            </div>
+            <span className="text-md text-bg bg-accent px-2 rounded-2xl">
+              {item.date}
+            </span>
           </div>
-        ))}
+
+          <p className="text-md font-medium text-fg mt-1">{item.company}</p>
+
+          <div className="flex flex-row items-center">
+            <Icon icon="tabler:map-pin" className="text-2xl" />
+            <p className="text-lg text-accent px-2">{item.location}</p>
+          </div>
+          <p className="mt-4 text-fg-dim leading-relaxed">{item.description}</p>
+          <div>
+            {item.images.map((url, i) => (
+              <img
+                src={url}
+                key={i}
+                alt={url}
+                className="w-full h-auto rounded-lg object-cover"
+              />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

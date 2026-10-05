@@ -10,6 +10,8 @@ export default function Header() {
   const nameTypedRef = useRef<Typed | null>(null);
   const traitsTypedRef = useRef<Typed | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const nameInitialized = useRef(false);
+  const traitsInitialized = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,7 +25,8 @@ export default function Header() {
               progress = 100;
               clearInterval(interval);
               setTimeout(() => {
-                if (!nameRef.current) return;
+                if (!nameRef.current || nameInitialized.current) return;
+                nameInitialized.current = true;
                 nameTypedRef.current = new Typed(nameRef.current, {
                   strings: ["Jay Delos Santos"],
                   typeSpeed: 80,
@@ -36,7 +39,8 @@ export default function Header() {
                     const cursor = nameRef.current
                       ?.nextElementSibling as HTMLElement | null;
                     if (cursor) cursor.style.display = "none";
-                    if (!traitsRef.current) return;
+                    if (!traitsRef.current || traitsInitialized.current) return;
+                    traitsInitialized.current = true;
                     traitsTypedRef.current = new Typed(traitsRef.current, {
                       strings: [
                         "full stack developer",
@@ -65,8 +69,6 @@ export default function Header() {
     if (headerRef.current) observer.observe(headerRef.current);
     return () => {
       observer.disconnect();
-      nameTypedRef.current?.destroy();
-      traitsTypedRef.current?.destroy();
     };
   }, [booted]);
 

@@ -60,6 +60,29 @@ html {
   font-family: "JetBrainsMono", monospace;
 }
 
+/* Minimal terminal-style scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fg-dim);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-fg-dim) transparent;
+}
+
 @keyframes float {
   0%,
   100% {
